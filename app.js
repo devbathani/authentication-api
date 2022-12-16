@@ -3,6 +3,8 @@ const morgan = require('morgan')
 const createError = require('http-errors')
 require('dotenv').config()
 
+const AuthRoute = require('./routes/Auth.route.js')
+
 const app = express()
 const port = process.env.PORT || 3000
 
@@ -11,6 +13,8 @@ app.get('/', async(req, res, next) =>
     res.send('Hello World!')
   }  
 )
+
+app.use('/auth',AuthRoute)
 
 app.use(async(req, res, next)=> {
     ///Old Way 

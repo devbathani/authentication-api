@@ -6,6 +6,7 @@ require('dotenv').config()
 const AuthRoute = require('./routes/Auth.route.js')
 
 const app = express()
+app.use(morgan('dev'))
 const port = process.env.PORT || 3000
 
 app.get('/', async(req, res, next) => 

@@ -12,7 +12,7 @@ module.exports = {
                 issuer: 'devbathani'
             } 
             JWT.sign(payload, secret, options, (err, token)=>{
-                if(err) reject(err)
+                if(err) reject(createError.InternalServerError())
                 resolve(token)
             })
         })
